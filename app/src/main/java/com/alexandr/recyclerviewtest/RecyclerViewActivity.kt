@@ -17,7 +17,7 @@ class RecyclerViewActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(applicationContext)
             setHasFixedSize(true)
             adapter = RVAdapter(Model.persons, View.OnClickListener {
-                val itemPosition = rv.getChildLayoutPosition(it)
+                val itemPosition = getChildLayoutPosition(it)
                 val intent = Intent(applicationContext, CardViewActivity::class.java)
                 intent.putExtra(Model.EXTRA_PUT_NAME, itemPosition)
                 startActivity(intent)
